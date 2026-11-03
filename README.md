@@ -1,50 +1,38 @@
 <div align="center">
-  <h1>Hi, I'm Sandesh Bidari 👋</h1>
-  <p><strong>Web developer focused on Python, Django, and useful full-stack applications.</strong></p>
+  <img src="./assets/profile-banner.svg" alt="Sandesh Bidari â€” web developer focused on Python and Django" width="100%">
+  <h3>Professional Google searcher Â· Part-time vibe coder Â· Full-time â€œwhy is this not working?â€ specialist.</h3>
+  <p>Web developer focused on Python, Django, and practical full-stack applications.</p>
   <p>
-    <a href="https://github.com/bidari2sandesh">
-      <img src="https://img.shields.io/badge/GitHub-bidari2sandesh-181717?style=for-the-badge&logo=github" alt="GitHub profile">
-    </a>
+    <a href="https://github.com/bidari2sandesh?tab=repositories">Explore my repositories</a>
+    &nbsp;Â·&nbsp;
+    <a href="https://github.com/bidari2sandesh/my-portfolio">Featured project</a>
   </p>
 </div>
 
 ---
 
-## About
+## ðŸ‘‹ About me
 
-I build web applications that bring together thoughtful interfaces, practical workflows, and dependable backend features. I’m especially interested in Python and Django, and I keep learning by building real projects.
+I build Django-powered web applications that pair public-facing experiences with useful business workflows. My featured project brings together a photography portfolio, booking tools, media management, and role-based administration.
 
-- 🔭 Building web applications and business tools
-- 🌱 Focused on Python, Django, and full-stack development
-- 🤝 Open to learning from and collaborating with the developer community
+## ðŸ§° Tech I work with
 
-## Tech
-
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white" alt="Django">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=222222" alt="JavaScript">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL">
-  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git">
+<p align="center">
+  <kbd>Python</kbd> &nbsp; <kbd>Django</kbd> &nbsp; <kbd>JavaScript</kbd> &nbsp; <kbd>HTML</kbd> &nbsp; <kbd>CSS</kbd> &nbsp; <kbd>PostgreSQL</kbd>
 </p>
 
-## Featured project
+## ðŸš€ Featured project
 
 ### [Wedding Photography Business System](https://github.com/bidari2sandesh/my-portfolio)
 
-A Django application for a wedding photography business, with public portfolio pages, booking workflows, media and content management, and role-based administration.
+A Django platform for a wedding photography business, with public portfolio pages, booking workflows, media and content management, and role-based administration.
 
-**Built with:** Python · Django · JavaScript · PostgreSQL-ready configuration
+**Stack:** Python Â· Django Â· JavaScript Â· PostgreSQL-ready configuration
 
-## GitHub activity
+## ðŸ”Ž Find me on GitHub
 
-Explore my work and activity directly on GitHub:
+[Repositories](https://github.com/bidari2sandesh?tab=repositories) Â· [Contributions](https://github.com/bidari2sandesh?tab=overview#contributions-calendar) Â· [Recent activity](https://github.com/bidari2sandesh?tab=overview)
 
-- [Repositories](https://github.com/bidari2sandesh?tab=repositories)
-- [Contributions](https://github.com/bidari2sandesh?tab=overview#contributions-calendar)
-- [Recent activity](https://github.com/bidari2sandesh?tab=overview)
-
-
-
+<div align="center">
+  <sub>Thanks for stopping by. If you spot a bug, please leave it a detailed issue so I can pretend it was part of the plan.</sub>
+</div>
