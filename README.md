@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./assets/profile-banner.svg" alt="Sandesh Bidari â€” web developer focused on Python and Django" width="100%">
-  <h3>Professional Google searcher Â· Part-time vibe coder Â· Full-time â€œwhy is this not working?â€ specialist.</h3>
+  <p><img src="./assets/profile-tagline.gif" alt="Animated tagline: Professional Google searcher. Part-time vibe coder. Full-time why is this not working specialist." width="100%"></p>
   <p>Web developer focused on Python, Django, and practical full-stack applications.</p>
   <p>
     <a href="https://github.com/bidari2sandesh?tab=repositories">Explore my repositories</a>
