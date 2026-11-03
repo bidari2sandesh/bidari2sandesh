@@ -9,6 +9,15 @@
   </p>
 </div>
 
+## Video previews
+
+<table>
+  <tr>
+    <td align="center"><strong>Cinematic</strong><br><img src="./assets/cinematic-preview.gif" alt="Cinematic preview with an armored figure emerging through smoke" width="100%"></td>
+    <td align="center"><strong>Futuristic</strong><br><img src="./assets/futuristic-preview.gif" alt="Futuristic preview of a glowing armored suit" width="100%"></td>
+  </tr>
+</table>
+
 ---
 
 ## About me
