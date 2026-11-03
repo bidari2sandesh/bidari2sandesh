@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Sandesh Bidari - Python and Django web developer. A cinematic, scroll-driven portfolio.">
+  <title>Sandesh Bidari | Scroll Experience</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f2f5fb;
+      --muted: #c1c9d7;
+      --cyan: #77e8d0;
+      --red: #ff665e;
+      --panel: rgba(9, 13, 22, .76);
+      --line: rgba(220, 233, 255, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-snap-type: y proximity; }
+    body {
+      margin: 0;
+      background: #080b12;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    .video-stage {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 75% 25%, rgba(94, 123, 190, .3), transparent 32%),
+        linear-gradient(135deg, #10192b, #080b12 60%, #152b35);
+    }
+    .video-stage video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .5;
+      filter: brightness(.74) saturate(.82);
+      transition: opacity .7s ease, filter .7s ease;
+    }
+    .video-stage.is-changing video { opacity: .08; }
+    .video-shade {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(5, 7, 12, .86), rgba(5, 7, 12, .46) 60%, rgba(5, 7, 12, .35)),
+        linear-gradient(0deg, rgba(5, 7, 12, .8), transparent 40%, rgba(5, 7, 12, .42));
+    }
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px clamp(20px, 5vw, 72px);
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      background: rgba(7, 10, 17, .38);
+      backdrop-filter: blur(14px);
+    }
+    .brand {
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+    }
+    .brand-mark {
+      display: inline-grid;
+      width: 29px;
+      height: 29px;
+      margin-right: 10px;
+      place-items: center;
+      border-radius: 9px;
+      color: #071014;
+      background: linear-gradient(135deg, var(--cyan), #9db0ff);
+      letter-spacing: 0;
+    }
+    .nav-links { display: flex; gap: clamp(14px, 3vw, 34px); }
+    .nav-links a {
+      color: var(--muted);
+      font-size: .78rem;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible { color: white; }
+    .scroll-progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      z-index: 20;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--cyan));
+      box-shadow: 0 0 18px rgba(119,232,208,.6);
+    }
+    .scene {
+      position: relative;
+      display: flex;
+      min-height: 100svh;
+      align-items: center;
+      padding: 130px clamp(24px, 9vw, 140px) 100px;
+      isolation: isolate;
+      scroll-snap-align: start;
+    }
+    .scene::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background: linear-gradient(90deg, rgba(5, 7, 12, .64), rgba(5, 7, 12, .12) 82%);
+    }
+    .content { width: min(100%, 1100px); }
+    .eyebrow {
+      margin: 0 0 24px;
+      color: var(--cyan);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 1100px;
+      margin-bottom: 26px;
+      font-size: clamp(2.65rem, 7.1vw, 6.8rem);
+      font-weight: 800;
+      letter-spacing: -.055em;
+      line-height: .99;
+    }
+    h1 span { display: block; }
+    h2 {
+      max-width: 900px;
+      margin-bottom: 26px;
+      font-size: clamp(2.3rem, 6vw, 5.5rem);
+      letter-spacing: -.05em;
+      line-height: 1.02;
+    }
+    .lead, .body-copy {
+      max-width: 760px;
+      color: #e0e6f1;
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
+      line-height: 1.75;
+    }
+    .lead { max-width: 680px; }
+    [data-type] { min-height: 1.2em; }
+    .cursor::after {
+      display: inline-block;
+      width: .08em;
+      height: .9em;
+      margin-left: .12em;
+      content: "";
+      vertical-align: -.08em;
+      background: var(--cyan);
+      animation: blink .75s steps(2, start) infinite;
+    }
+    @keyframes blink { to { visibility: hidden; } }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 24px;
+      padding: 13px 18px;
+      border: 1px solid rgba(119,232,208,.7);
+      border-radius: 999px;
+      color: var(--ink);
+      background: rgba(9, 16, 25, .62);
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: rgba(119,232,208,.14); }
+    .chapter {
+      position: absolute;
+      right: clamp(24px, 5vw, 72px);
+      bottom: 34px;
+      color: rgba(235,242,255,.7);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+    }
+    .project-card {
+      max-width: 850px;
+      padding: clamp(24px, 4vw, 42px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: 0 22px 90px rgba(0,0,0,.28);
+      backdrop-filter: blur(16px);
+    }
+    .project-card h3 {
+      margin-bottom: 16px;
+      font-size: clamp(1.6rem, 3.6vw, 3rem);
+      letter-spacing: -.04em;
+    }
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .stack span {
+      padding: 9px 13px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      color: #f4f7ff;
+      background: rgba(18, 27, 42, .8);
+      font-size: .84rem;
+      font-weight: 700;
+    }
+    .stack span:nth-child(1) { border-color: rgba(55,118,171,.9); background: rgba(55,118,171,.3); }
+    .stack span:nth-child(2) { border-color: rgba(110,231,194,.7); background: rgba(12,75,51,.5); }
+    .stack span:nth-child(3) { border-color: rgba(247,223,30,.75); background: rgba(247,223,30,.12); }
+    .stack span:nth-child(4) { border-color: rgba(227,79,38,.8); background: rgba(227,79,38,.16); }
+    .stack span:nth-child(5) { border-color: rgba(21,114,182,.9); background: rgba(21,114,182,.24); }
+    .stack span:nth-child(6) { border-color: rgba(51,103,145,.9); background: rgba(51,103,145,.28); }
+    .outro { text-align: center; justify-content: center; }
+    .outro .content { margin-inline: auto; }
+    .outro h2 { margin-inline: auto; }
+    .outro .body-copy { margin-inline: auto; }
+    @media (max-width: 680px) {
+      .topbar { padding: 14px 18px; }
+      .brand { font-size: .68rem; }
+      .brand-mark { width: 25px; height: 25px; }
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: .7rem; }
+      .scene { padding: 110px 24px 80px; }
+      .scene::before { background: rgba(5, 7, 12, .52); }
+      h1 { font-size: clamp(2.4rem, 12vw, 4.6rem); }
+      .chapter { right: 24px; bottom: 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; scroll-snap-type: none; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="video-stage" id="videoStage" aria-hidden="true">
+    <video id="backgroundVideo" muted playsinline loop preload="none"></video>
+  </div>
+  <div class="video-shade" aria-hidden="true"></div>
+
+  <nav class="topbar" aria-label="Main navigation">
+    <a class="brand" href="#home"><span class="brand-mark">SB</span>SANDESH BIDARI</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="scene" id="home" data-scene data-video="assets/cinematic.mp4">
+      <div class="content">
+        <p class="eyebrow" data-type="WEB DEVELOPER / PYTHON + DJANGO"></p>
+        <h1 aria-label="Professional Google searcher. Part-time vibe coder. Full-time why is this not working specialist.">
+          <span data-type="Professional Google searcher."></span>
+          <span data-type="Part-time vibe coder."></span>
+          <span data-type="Full-time &quot;why is this not working?&quot; specialist."></span>
+        </h1>
+        <p class="lead" data-type="Web developer focused on Python, Django, and practical full-stack applications."></p>
+        <a class="button" href="#about">Scroll to explore <span aria-hidden="true">â†“</span></a>
+      </div>
+      <span class="chapter">01 / THE INTRO</span>
+    </section>
+
+    <section class="scene" id="about" data-scene data-video="assets/futuristic.mp4">
+      <div class="content">
+        <p class="eyebrow" data-type="ABOUT / THE APPROACH"></p>
+        <h2 data-type="Useful workflows. Thoughtful web experiences."></h2>
+        <p class="body-copy" data-type="I build Django-powered web applications that pair public-facing experiences with useful business workflows."></p>
+        <p class="body-copy" data-type="I learn by making things, breaking them, and figuring out why they worked five minutes ago."></p>
+      </div>
+      <span class="chapter">02 / THE PROCESS</span>
+    </section>
+
+    <section class="scene" id="work" data-scene data-video="assets/cinematic.mp4">
+      <div class="content">
+        <p class="eyebrow" data-type="FEATURED PROJECT"></p>
+        <div class="project-card">
+          <h3 data-type="Wedding Photography Business System"></h3>
+          <p class="body-copy" data-type="A Django platform with portfolio pages, booking workflows, media and content management, and role-based administration."></p>
+          <div class="stack" aria-label="Technology stack">
+            <span>Python</span><span>Django</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>PostgreSQL</span>
+          </div>
+          <a class="button" href="https://github.com/bidari2sandesh/my-portfolio">Explore the project <span aria-hidden="true">â†—</span></a>
+        </div>
+      </div>
+      <span class="chapter">03 / THE WORK</span>
+    </section>
+
+    <section class="scene outro" id="stack" data-scene data-video="assets/futuristic.mp4">
+      <div class="content">
+        <p class="eyebrow" data-type="BUILD / DEBUG / REPEAT"></p>
+        <h2 data-type="Thanks for stopping by."></h2>
+        <p class="body-copy" data-type="The bug is either fixed, documented, or promoted to a feature."></p>
+        <a class="button" href="https://github.com/bidari2sandesh">Back to my GitHub profile <span aria-hidden="true">â†—</span></a>
+      </div>
+      <span class="chapter">04 / UNTIL NEXT TIME</span>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const video = document.getElementById("backgroundVideo");
+      const stage = document.getElementById("videoStage");
+      const progress = document.getElementById("scrollProgress");
+      const sections = [...document.querySelectorAll("[data-scene]")];
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let currentVideo = "";
+
+      function typeSection(section) {
+        const targets = [...section.querySelectorAll("[data-type]")];
+        if (reducedMotion) {
+          targets.forEach((target) => { target.textContent = target.dataset.type; });
+          return;
+        }
+        let chain = Promise.resolve();
+        targets.forEach((target) => {
+          chain = chain.then(() => new Promise((resolve) => {
+            const text = target.dataset.type || "";
+            target.classList.add("cursor");
+            let position = 0;
+            const timer = window.setInterval(() => {
+              target.textContent = text.slice(0, ++position);
+              if (position >= text.length) {
+                window.clearInterval(timer);
+                window.setTimeout(() => {
+                  target.classList.remove("cursor");
+                  resolve();
+                }, 180);
+              }
+            }, 27);
+          }));
+        });
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const section = entry.target;
+          if (entry.isIntersecting) {
+            section.classList.add("is-active");
+            if (!section.dataset.typed) {
+              section.dataset.typed = "true";
+              typeSection(section);
+            }
+            const nextVideo = section.dataset.video;
+            if (!reducedMotion && nextVideo && nextVideo !== currentVideo) {
+              currentVideo = nextVideo;
+              stage.classList.add("is-changing");
+              video.pause();
+              video.src = nextVideo;
+              video.load();
+              video.oncanplay = () => {
+                video.play().catch(() => {});
+                stage.classList.remove("is-changing");
+              };
+            } else if (!reducedMotion && video.paused) {
+              video.play().catch(() => {});
+            }
+          } else {
+            section.classList.remove("is-active");
+          }
+        });
+      }, { threshold: 0.42 });
+
+      sections.forEach((section) => observer.observe(section));
+
+      function updateProgress() {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+        progress.style.width = Math.min(100, Math.max(0, ratio * 100)) + "%";
+      }
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      updateProgress();
+    })();
+  </script>
+</body>
+</html>
