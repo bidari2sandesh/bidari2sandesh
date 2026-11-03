@@ -3,22 +3,19 @@
   <p><img src="./assets/profile-tagline.gif" alt="Professional Google searcher. Part-time vibe coder. Full-time why is this not working specialist." width="100%"></p>
   <p>Web developer focused on Python, Django, and practical full-stack applications.</p>
   <p>
-    <a href="https://github.com/bidari2sandesh?tab=repositories">Explore my repositories</a>
+    <a href="https://bidari2sandesh.github.io/bidari2sandesh/">Open the interactive scroll page</a>
     &nbsp;|&nbsp;
     <a href="https://github.com/bidari2sandesh/my-portfolio">Featured project</a>
   </p>
 </div>
 
-## Video previews
-
-<table>
-  <tr>
-    <td align="center"><strong>Cinematic</strong><br><img src="./assets/cinematic-preview.gif" alt="Cinematic preview with an armored figure emerging through smoke" width="100%"></td>
-    <td align="center"><strong>Futuristic</strong><br><img src="./assets/futuristic-preview.gif" alt="Futuristic preview of a glowing armored suit" width="100%"></td>
-  </tr>
-</table>
-
 ---
+
+## Interactive scroll experience
+
+The cinematic videos play in the background while the profile text types in as you scroll.
+
+[Open the interactive page](https://bidari2sandesh.github.io/bidari2sandesh/)
 
 ## About me
 
