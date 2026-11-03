@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="300" viewBox="0 0 1100 300" role="img" aria-labelledby="title desc">
+  <title id="title">Sandesh Bidari â€” web developer</title>
+  <desc id="desc">A dark gradient banner with a terminal window and Python and Django developer text.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020" />
+      <stop offset="0.55" stop-color="#171d3b" />
+      <stop offset="1" stop-color="#193a49" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b9cff" />
+      <stop offset="1" stop-color="#6ee7c2" />
+    </linearGradient>
+  </defs>
+  <rect width="1100" height="300" rx="26" fill="url(#background)" />
+  <circle cx="1060" cy="-10" r="245" fill="#6ee7c2" opacity="0.07" />
+  <circle cx="1015" cy="305" r="180" fill="#8b9cff" opacity="0.08" />
+  <path d="M0 252 C250 190 340 330 560 270 S880 208 1100 254" fill="none" stroke="#91a7ff" stroke-opacity="0.12" stroke-width="2" />
+
+  <rect x="42" y="42" width="388" height="216" rx="18" fill="#0a0e1a" stroke="#3a4667" stroke-width="2" />
+  <path d="M42 82 H430" stroke="#303a57" stroke-width="2" />
+  <circle cx="70" cy="62" r="6" fill="#ff7185" />
+  <circle cx="92" cy="62" r="6" fill="#ffd166" />
+  <circle cx="114" cy="62" r="6" fill="#6ee7a8" />
+  <text x="68" y="121" fill="#9aa8c7" font-family="Consolas, 'Courier New', monospace" font-size="17">$ python manage.py</text>
+  <text x="68" y="151" fill="#dbe5ff" font-family="Consolas, 'Courier New', monospace" font-size="19" font-weight="700">runserver</text>
+  <text x="68" y="192" fill="#6ee7a8" font-family="Consolas, 'Courier New', monospace" font-size="15">System check: clean</text>
+  <text x="68" y="222" fill="#9aa8c7" font-family="Consolas, 'Courier New', monospace" font-size="14">Waiting for the next bug...</text>
+
+  <rect x="482" y="76" width="5" height="151" rx="2.5" fill="url(#accent)" />
+  <text x="520" y="126" fill="#f4f6ff" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="700" letter-spacing="1.5">SANDESH BIDARI</text>
+  <text x="522" y="169" fill="#aebcff" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2">WEB DEVELOPER Â· PYTHON + DJANGO</text>
+  <text x="522" y="216" fill="#c6d2e8" font-family="Arial, Helvetica, sans-serif" font-size="18">Build useful things. Debug the rest.</text>
+</svg>
