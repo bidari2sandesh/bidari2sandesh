@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="./assets/profile-banner.svg" alt="Sandesh Bidari - Python and Django web developer" width="100%">
-  <p><img src="./assets/profile-tagline.gif" alt="Professional Google searcher. Part-time vibe coder. Full-time why is this not working specialist." width="100%"></p>
+  <img src="./assets/profile-banner.svg" alt="Sandesh Bidari — Python and Django web developer" width="100%">
+  <p><img src="./assets/profile-tagline-loop.gif" alt="Professional Google searcher. Part-time vibe coder. Full-time ‘why is this not working?’ specialist." width="100%"></p>
   <p>Web developer focused on Python, Django, and practical full-stack applications.</p>
   <p>
     <a href="https://bidari2sandesh.github.io/bidari2sandesh/">Open the interactive scroll page</a>
@@ -11,11 +11,14 @@
 
 ---
 
-## Interactive scroll experience
+## Video previews
 
-The cinematic videos play in the background while the profile text types in as you scroll.
+<p align="center">
+  <a href="https://bidari2sandesh.github.io/bidari2sandesh/"><img src="./assets/cinematic-preview.gif" alt="Looping cinematic video preview" width="49%"></a>
+  <a href="https://bidari2sandesh.github.io/bidari2sandesh/"><img src="./assets/futuristic-preview.gif" alt="Looping futuristic video preview" width="49%"></a>
+</p>
 
-[Open the interactive page](https://bidari2sandesh.github.io/bidari2sandesh/)
+<p align="center"><sub>These animated previews loop in the README. Open the interactive page for the full-screen video background, changing scenes, and text that types in as you scroll.</sub></p>
 
 ## About me
 
@@ -42,3 +45,4 @@ A Django platform for a wedding photography business, with public portfolio page
 <div align="center">
   <sub>Thanks for stopping by. If you spot a bug, please leave a detailed issue so I can pretend it was part of the plan.</sub>
 </div>
+
