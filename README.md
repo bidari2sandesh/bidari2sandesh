@@ -38,15 +38,13 @@ A Django application for a wedding photography business, with public portfolio p
 
 **Built with:** Python · Django · JavaScript · PostgreSQL-ready configuration
 
-## GitHub
+## GitHub activity
 
-<div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=bidari2sandesh&show_icons=true&hide_border=true&theme=github_dark" alt="Sandesh's GitHub stats">
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=bidari2sandesh&layout=compact&hide_border=true&theme=github_dark" alt="Most used languages">
-</div>
+Explore my work and activity directly on GitHub:
 
-<div align="center">
-  <sub>Thanks for stopping by — feel free to explore my repositories.</sub>
-</div>
+- [Repositories](https://github.com/bidari2sandesh?tab=repositories)
+- [Contributions](https://github.com/bidari2sandesh?tab=overview#contributions-calendar)
+- [Recent activity](https://github.com/bidari2sandesh?tab=overview)
+
 
 
